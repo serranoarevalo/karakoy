@@ -1,14 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
+import styled from "styled-components";
 import GlobalStyle from "./GlobalStyles";
+import Card01 from "./Card01";
 
-class App extends Component {
-  render() {
-    return (
-      <>
-        <GlobalStyle />
-      </>
-    );
-  }
-}
+const Container = styled.div`
+  padding: 90px;
+`;
 
-export default App;
+export default () => (
+  <Container>
+    <Card01
+      title="Toledo, Spain"
+      subtitle="Also know as The Imperial City."
+      tag="Spain"
+      iconName="far fa-heart"
+      bg="https://picsum.photos/740/420/?random"
+    />
+    <GlobalStyle />
+  </Container>
+);
