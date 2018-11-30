@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 340px;
-  height: 260px;
   position: relative;
   background: url(${props => props.bg});
   background-size: cover;
@@ -66,7 +64,7 @@ const Card01 = ({
   tag = null,
   tagColor = "#368BE3",
   iconName = null,
-  iconSize = "2",
+  iconSize = 2,
   bg
 }) => (
   <Container bg={bg}>
@@ -93,7 +91,7 @@ Card01.propTypes = {
   tag: PropTypes.string,
   tagColor: PropTypes.string,
   iconName: PropTypes.string,
-  iconSize: PropTypes.string,
+  iconSize: PropTypes.number,
   bg: PropTypes.string
 };
 

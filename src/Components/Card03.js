@@ -3,23 +3,24 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 340px;
-  height: 260px;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.7)),
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0.2) 40%,
+      rgba(0, 0, 0, 0.8) 80%
+    ),
     url(${props => props.bg});
   background-size: cover;
-  border-radius: 8px 8px 10px 10px;
+  border-radius: 8px;
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.07);
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  padding: 20px;
 `;
 
 const Content = styled.div`
-  bottom: 10px;
   width: 100%;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -91,7 +92,7 @@ const Card03 = ({
   tag = null,
   tagColor = "#E33C36",
   bottomIconName = null,
-  bottomIconSize = "1",
+  bottomIconSize = 1,
   bg,
   totalReviews,
   ratingAverage
@@ -187,7 +188,7 @@ Card03.propTypes = {
   tag: PropTypes.string,
   tagColor: PropTypes.string,
   bottomIconName: PropTypes.string,
-  bottomIconSize: PropTypes.string,
+  bottomIconSize: PropTypes.number,
   bg: PropTypes.string,
   totalReviews: PropTypes.number.isRequired,
   ratingAverage: PropTypes.oneOf([0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5])

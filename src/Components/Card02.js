@@ -3,28 +3,26 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 340px;
-  height: 260px;
   position: relative;
   background-image: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.7)),
     url(${props => props.bg});
   background-size: cover;
-  border-radius: 8px 8px 10px 10px;
+  border-radius: 8px;
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  padding: 20px;
 `;
 
 const Content = styled.div`
   width: 100%;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   color: white;
-  margin-top: 20px;
+  margin-top: 40px;
 `;
 
 const ContentColumn = styled.div``;
@@ -71,9 +69,9 @@ const Card02 = ({
   tag = null,
   tagColor = "#E33C36",
   bottomIconName = null,
-  bottomIconSize = "1",
+  bottomIconSize = 1,
   centerIconName = null,
-  centerIconSize = "3",
+  centerIconSize = 3,
   bg
 }) => (
   <Container bg={bg}>
@@ -105,9 +103,9 @@ Card02.propTypes = {
   tag: PropTypes.string,
   tagColor: PropTypes.string,
   bottomIconName: PropTypes.string,
-  bottomIconSize: PropTypes.string,
+  bottomIconSize: PropTypes.number,
   centerIconName: PropTypes.string,
-  centerIconSize: PropTypes.string,
+  centerIconSize: PropTypes.number,
   bg: PropTypes.string
 };
 
