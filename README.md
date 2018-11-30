@@ -1,3 +1,3 @@
 # Codekits Components Boilerplate
 
-A React Boilerplate to develop Component Kits
+A set of beautiful React UI Card Components
