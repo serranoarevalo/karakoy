@@ -8,7 +8,7 @@ const Container = styled.div`
     url(${props => props.bg});
   background-size: cover;
   border-radius: 8px;
-  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.07);
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,7 +67,7 @@ const Card02 = ({
   title,
   subtitle,
   tag = null,
-  tagColor = "#E33C36",
+  tagBg = "#E33C36",
   bottomIconName = null,
   bottomIconSize = 1,
   centerIconName = null,
@@ -75,7 +75,7 @@ const Card02 = ({
   bg
 }) => (
   <Container bg={bg}>
-    <TagContainer tagColor={tagColor}>
+    <TagContainer tagColor={tagBg}>
       <TagText>{tag}</TagText>
     </TagContainer>
     {centerIconName && (
@@ -101,12 +101,12 @@ Card02.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   tag: PropTypes.string,
-  tagColor: PropTypes.string,
+  tagBg: PropTypes.string,
   bottomIconName: PropTypes.string,
   bottomIconSize: PropTypes.number,
   centerIconName: PropTypes.string,
   centerIconSize: PropTypes.number,
-  bg: PropTypes.string
+  bg: PropTypes.string.isRequired
 };
 
 export default Card02;

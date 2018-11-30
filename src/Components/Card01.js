@@ -62,13 +62,13 @@ const Card01 = ({
   title,
   subtitle,
   tag = null,
-  tagColor = "#368BE3",
+  tagBg = "#368BE3",
   iconName = null,
   iconSize = 2,
   bg
 }) => (
   <Container bg={bg}>
-    <TagContainer tagColor={tagColor}>
+    <TagContainer tagColor={tagBg}>
       <TagText>{tag}</TagText>
     </TagContainer>
     <Content>
@@ -89,10 +89,10 @@ Card01.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   tag: PropTypes.string,
-  tagColor: PropTypes.string,
+  tagBg: PropTypes.string,
   iconName: PropTypes.string,
   iconSize: PropTypes.number,
-  bg: PropTypes.string
+  bg: PropTypes.string.isRequired
 };
 
 export default Card01;

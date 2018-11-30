@@ -12,7 +12,7 @@ const Container = styled.div`
     url(${props => props.bg});
   background-size: cover;
   border-radius: 8px;
-  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.07);
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -90,7 +90,7 @@ const Card03 = ({
   title,
   subtitle,
   tag = null,
-  tagColor = "#E33C36",
+  tagBg = "#E33C36",
   bottomIconName = null,
   bottomIconSize = 1,
   bg,
@@ -98,7 +98,7 @@ const Card03 = ({
   ratingAverage
 }) => (
   <Container bg={bg}>
-    <TagContainer tagColor={tagColor}>
+    <TagContainer tagColor={tagBg}>
       <TagText>{tag}</TagText>
     </TagContainer>
     <Content>
@@ -186,10 +186,10 @@ Card03.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   tag: PropTypes.string,
-  tagColor: PropTypes.string,
+  tagBg: PropTypes.string,
   bottomIconName: PropTypes.string,
   bottomIconSize: PropTypes.number,
-  bg: PropTypes.string,
+  bg: PropTypes.string.isRequired,
   totalReviews: PropTypes.number.isRequired,
   ratingAverage: PropTypes.oneOf([0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5])
 };
