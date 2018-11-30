@@ -10,6 +10,7 @@ const Container = styled.div`
       rgba(0, 0, 0, 0.8) 80%
     ),
     url(${props => props.bg});
+  background-position: center center;
   background-size: cover;
   border-radius: 8px;
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.08);

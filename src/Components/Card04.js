@@ -11,6 +11,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding: 10px;
+  background-position: center center;
 `;
 
 const Content = styled.div`

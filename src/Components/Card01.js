@@ -5,6 +5,7 @@ import styled from "styled-components";
 const Container = styled.div`
   position: relative;
   background: url(${props => props.bg});
+  background-position: center center;
   background-size: cover;
   border-radius: 8px 8px 10px 10px;
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.07);

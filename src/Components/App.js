@@ -6,12 +6,14 @@ import Card02 from "./Card02";
 import Card03 from "./Card03";
 import Card04 from "./Card04";
 import Card05 from "./Card05";
+import Card06 from "./Card06";
 
 const Container = styled.div`
   padding: 90px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 150px);
+  grid-template-columns: repeat(auto-fit, 150px);
   grid-gap: 40px;
+  grid-auto-rows: 260px;
   grid-template-rows: 260px;
   & > div {
     grid-column: span 2;
@@ -60,6 +62,12 @@ export default () => (
       title="Burano Island"
       subtitle="November 2017"
       cta="View Trip"
+    />
+    <Card06
+      bg="https://picsum.photos/740/420/?random"
+      title="Places"
+      cta="Know more"
+      iconName="fas fa-map-pin"
     />
     <GlobalStyle />
   </Container>
