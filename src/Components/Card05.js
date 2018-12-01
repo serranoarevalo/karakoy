@@ -60,6 +60,7 @@ const CTA = styled.div`
   background-color: ${props => props.bgColor};
   padding: 10px 0px;
   text-align: center;
+  cursor: pointer;
 `;
 
 const CTAText = styled.span`

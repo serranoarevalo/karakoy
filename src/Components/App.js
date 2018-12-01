@@ -7,14 +7,15 @@ import Card03 from "./Card03";
 import Card04 from "./Card04";
 import Card05 from "./Card05";
 import Card06 from "./Card06";
+import Card07 from "./Card07";
 
 const Container = styled.div`
-  padding: 90px;
+  padding: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 150px);
-  grid-gap: 40px;
+  grid-template-columns: repeat(10, 150px);
+  grid-gap: 30px;
   grid-auto-rows: 260px;
-  grid-template-rows: 260px;
+  grid-template-rows: 260px 400px;
   & > div {
     grid-column: span 2;
     &:nth-child(5),
@@ -68,6 +69,13 @@ export default () => (
       title="Places"
       cta="Know more"
       iconName="fas fa-map-pin"
+    />
+    <Card07
+      bg="https://picsum.photos/740/420/?random"
+      tag="Italy"
+      title="Venice Islands"
+      intro="Venice is a city in northeastern Italy and the capital of the Veneto region. It is situated across a group of 118 small islands that are separated by canals and linked by bridges, of which there are 400. The islands are located in the shallow Venetian Lagoon, an enclosed bay that lies between the mouths of the as a UNESCO World Heritage Site."
+      cta="View more"
     />
     <GlobalStyle />
   </Container>

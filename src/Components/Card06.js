@@ -42,6 +42,7 @@ const CTA = styled.div`
   text-align: center;
   border-radius: 8px;
   width: 100%;
+  cursor: pointer;
 `;
 
 const CTAText = styled.span`
@@ -52,7 +53,7 @@ const CTAText = styled.span`
 const Divider = styled.div`
   background-color: white;
   width: 50%;
-  height: 5px;
+  height: 4px;
   border-radius: 2px;
 `;
 
