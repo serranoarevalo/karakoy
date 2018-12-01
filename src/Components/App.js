@@ -9,6 +9,7 @@ import Card05 from "./Card05";
 import Card06 from "./Card06";
 import Card07 from "./Card07";
 import Card08 from "./Card08";
+import Card09 from "./Card09";
 
 const Container = styled.div`
   padding: 50px;
@@ -27,6 +28,13 @@ const Container = styled.div`
       grid-column: span 4;
     }
   }
+`;
+
+const MultiCard = styled.div`
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 115px 245px;
 `;
 
 export default () => (
@@ -88,7 +96,15 @@ export default () => (
       cta="View more"
       title="Florence, Italy"
     />
-
+    <MultiCard>
+      <Card09 title="Pictures" iconName="fas fa-image" />
+      <Card09
+        title="Places"
+        iconName="fas fa-map-pin"
+        fromColor="#870EFF"
+        toColor="#4C09BE"
+      />
+    </MultiCard>
     <GlobalStyle />
   </Container>
 );
