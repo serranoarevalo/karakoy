@@ -12,6 +12,7 @@ import Card08 from "./Card08";
 import Card09 from "./Card09";
 import Card10 from "./Card10";
 import Card11 from "./Card11";
+import Card12 from "./Card12";
 
 const Container = styled.div`
   padding: 50px;
@@ -44,6 +45,7 @@ const MultiCard = styled.div`
 
 const TwoCards = styled(MultiCard)`
   grid-template-columns: 1fr;
+  grid-column-gap: 0;
 `;
 
 export default () => (
@@ -123,6 +125,14 @@ export default () => (
     </MultiCard>
     <TwoCards>
       <Card11 title="Euro Trip" preTitle="November 2017" />
+      <Card12
+        title="Toledo, Spain"
+        subtitle="Also know as The Imperial City."
+        tag="Spain"
+        iconName="fas fa-ellipsis-v"
+        bgPhoto="https://picsum.photos/740/420/?random"
+        cta="View Trip"
+      />
     </TwoCards>
     <GlobalStyle />
   </Container>

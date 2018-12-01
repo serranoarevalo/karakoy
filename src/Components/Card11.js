@@ -45,8 +45,8 @@ const Card11 = ({
   toColor = "#DB7805"
 }) => (
   <Container fromColor={fromColor} toColor={toColor}>
-    <PreTitle color={preTitleColor}>{preTitle}</PreTitle>
-    <Title color={titleColor}>{title}</Title>
+    {preTitle && <PreTitle color={preTitleColor}>{preTitle}</PreTitle>}
+    {title && <Title color={titleColor}>{title}</Title>}
     <Divider bgColor={dividerColor} />
   </Container>
 );
