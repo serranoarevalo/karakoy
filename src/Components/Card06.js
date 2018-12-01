@@ -46,44 +46,57 @@ const CTA = styled.div`
 `;
 
 const CTAText = styled.span`
-  color: white;
+  color: ${props => props.color};
   font-weight: 500;
 `;
 
 const Divider = styled.div`
-  background-color: white;
+  background-color: ${props => props.bgColor};
   width: 50%;
   height: 4px;
   border-radius: 2px;
 `;
 
 const Card06 = ({
-  bg,
+  bgPhoto,
   title,
   cta,
   ctaBg = "#006EFE",
+  ctaColor = "white",
   iconName,
-  iconSize = 2
+  iconSize = 2,
+  iconColor = "white",
+  dividerColor = "white"
 }) => (
-  <Container bg={bg}>
+  <Container bg={bgPhoto}>
     <Content>
-      <i className={`${iconName} fa-${iconSize}x`} />
-      <Title>{title}</Title>
-      <Divider />
+      {iconName && (
+        <i
+          style={{ color: iconColor }}
+          className={`${iconName} fa-${iconSize}x`}
+        />
+      )}
+      {title && <Title>{title}</Title>}
+      {title && <Divider bgColor={dividerColor} />}
     </Content>
-    <CTA bgColor={ctaBg}>
-      <CTAText>{cta}</CTAText>
-    </CTA>
+    {cta && (
+      <CTA bgColor={ctaBg} color={ctaColor}>
+        <CTAText>{cta}</CTAText>
+      </CTA>
+    )}
   </Container>
 );
 
 Card06.propTypes = {
-  bg: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  cta: PropTypes.string.isRequired,
+  bgPhoto: PropTypes.string,
+  title: PropTypes.string,
+  cta: PropTypes.string,
   ctaBg: PropTypes.string,
-  iconName: PropTypes.string.isRequired,
-  iconSize: PropTypes.number
+  ctaColor: PropTypes.string,
+  iconName: PropTypes.string,
+  iconSize: PropTypes.number,
+  iconColor: PropTypes.string,
+  dividerColor: PropTypes.string
 };
 
 export default Card06;

@@ -66,7 +66,7 @@ export default () => (
       cta="View Trip"
     />
     <Card06
-      bg="https://picsum.photos/740/420/?random"
+      bgPhoto="https://picsum.photos/740/420/?random"
       title="Places"
       cta="Know more"
       iconName="fas fa-map-pin"
