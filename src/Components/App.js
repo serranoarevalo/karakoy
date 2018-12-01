@@ -72,7 +72,7 @@ export default () => (
       iconName="fas fa-map-pin"
     />
     <Card07
-      bg="https://picsum.photos/740/420/?random"
+      bgPhoto="https://picsum.photos/740/420/?random"
       tag="Italy"
       title="Venice Islands"
       intro="Venice is a city in northeastern Italy and the capital of the Veneto region. It is situated across a group of 118 small islands that are separated by canals and linked by bridges, of which there are 400. The islands are located in the shallow Venetian Lagoon, an enclosed bay that lies between the mouths of the as a UNESCO World Heritage Site."

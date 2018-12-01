@@ -70,7 +70,7 @@ const Card01 = ({
   iconName,
   iconSize = 2,
   bgPhoto,
-  bgColor = "#61656E",
+  bgColor = "#DBE0E6",
   iconColor = "rgba(67, 72, 77, 0.2)"
 }) => (
   <Container bgPhoto={bgPhoto} bgColor={bgColor}>

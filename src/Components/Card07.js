@@ -12,10 +12,10 @@ const Container = styled.div`
 const Header = styled.div`
   height: 40%;
   border-radius: 8px 8px 0px 0px;
-  background-image: url(${props => props.bg});
+  background-image: url(${props => props.bgPhoto});
+  background-color: ${props => props.bgColor};
   background-size: cover;
   background-position: center center;
-  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.08);
 `;
 
 const Content = styled.div`
@@ -36,7 +36,7 @@ const TagContainer = styled.div`
   width: 60px;
   border-radius: 3px;
   text-align: center;
-  color: white;
+  color: ${props => props.color};
   margin-bottom: 10px;
   position: absolute;
   top: 30px;
@@ -48,7 +48,7 @@ const TagText = styled.span``;
 const Title = styled.span`
   font-weight: 600;
   font-size: 24px;
-  color: #1f2126;
+  color: ${props => props.color};
   margin-bottom: 20px;
   display: block;
   width: 100%;
@@ -58,7 +58,7 @@ const Intro = styled.p`
   height: 80%;
   overflow: hidden;
   line-height: 1.5;
-  color: #9ca1ae;
+  color: ${props => props.color};
 `;
 
 const CTAContainer = styled.div`
@@ -74,10 +74,10 @@ const CTA = styled.span`
   border-radius: 25px;
   z-index: 9;
   background: ${props => props.bgColor};
+  color: ${props => props.color};
 `;
 
 const CTAText = styled.span`
-  color: white;
   font-weight: 500;
 `;
 
@@ -94,42 +94,54 @@ const Gradient = styled.div`
 `;
 
 const Card07 = ({
-  bg,
+  bgPhoto,
+  bgColor = "#DBE0E6",
   tag,
-  title,
-  intro,
-  cta,
   tagBg = "#E33C36",
-  ctaBg = "linear-gradient(to left, #006EFE, #494AFF)"
+  tagColor = "white",
+  title,
+  titleColor = "#1f2126",
+  intro,
+  introColor = "#9ca1ae",
+  cta,
+  ctaBg = "linear-gradient(to left, #006EFE, #494AFF)",
+  ctaColor = "white"
 }) => (
   <Container>
     {tag && (
-      <TagContainer bgColor={tagBg}>
+      <TagContainer bgColor={tagBg} color={tagColor}>
         <TagText>{tag}</TagText>
       </TagContainer>
     )}
-    <Header bg={bg} />
+    <Header bgPhoto={bgPhoto} bgColor={bgColor} />
     <Content>
-      <Title>{title}</Title>
-      <Intro>{intro}</Intro>
-      <CTAContainer>
-        <CTA bgColor={ctaBg}>
-          <CTAText>{cta}</CTAText>
-        </CTA>
-      </CTAContainer>
-      <Gradient />
+      {title && <Title color={titleColor}>{title}</Title>}
+      {intro && <Intro color={introColor}>{intro}</Intro>}
+      {cta && (
+        <CTAContainer>
+          <CTA bgColor={ctaBg} color={ctaColor}>
+            <CTAText>{cta}</CTAText>
+          </CTA>
+        </CTAContainer>
+      )}
+      {intro && <Gradient />}
     </Content>
   </Container>
 );
 
 Card07.propTypes = {
-  bg: PropTypes.string.isRequired,
+  bgPhoto: PropTypes.string,
+  bgColor: PropTypes.string,
   tag: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  intro: PropTypes.string.isRequired,
-  cta: PropTypes.string.isRequired,
+  tagBg: PropTypes.string,
+  tagColor: PropTypes.string,
+  title: PropTypes.string,
+  titleColor: PropTypes.string,
+  intro: PropTypes.string,
+  introColor: PropTypes.string,
+  cta: PropTypes.string,
   ctaBg: PropTypes.string,
-  tagBg: PropTypes.string
+  ctaColor: PropTypes.string
 };
 
 export default Card07;
