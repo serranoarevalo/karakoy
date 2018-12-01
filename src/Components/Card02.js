@@ -76,9 +76,11 @@ const Card02 = ({
   bg
 }) => (
   <Container bg={bg}>
-    <TagContainer tagColor={tagBg}>
-      <TagText>{tag}</TagText>
-    </TagContainer>
+    {tag && (
+      <TagContainer tagColor={tagBg}>
+        <TagText>{tag}</TagText>
+      </TagContainer>
+    )}
     {centerIconName && (
       <CenterIcon>
         <i className={`${centerIconName} fa-${centerIconSize}x`} />

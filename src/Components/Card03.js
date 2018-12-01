@@ -99,9 +99,11 @@ const Card03 = ({
   ratingAverage
 }) => (
   <Container bg={bg}>
-    <TagContainer tagColor={tagBg}>
-      <TagText>{tag}</TagText>
-    </TagContainer>
+    {tag && (
+      <TagContainer tagColor={tagBg}>
+        <TagText>{tag}</TagText>
+      </TagContainer>
+    )}
     <Content>
       <ContentColumn>
         <Title>{title}</Title>

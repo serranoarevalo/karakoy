@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
   position: relative;
-  background: url(${props => props.bg});
-  background-position: center center;
+  background: url(${props => props.bgPhoto}), ${props => props.bgColor};
+  background-position: center top;
   background-size: cover;
   border-radius: 8px 8px 10px 10px;
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.07);
@@ -28,21 +28,21 @@ const ContentColumn = styled.div``;
 const Title = styled.span`
   font-size: 16px;
   font-weight: 600;
-  color: #1f2126;
+  color: ${props => props.color};
   display: block;
   margin-bottom: 8px;
 `;
 
 const Subtitle = styled.span`
   font-size: 14px;
-  color: #61656e;
+  color: ${props => props.color};
 `;
 
 const TagContainer = styled.div`
   position: absolute;
   top: 30px;
   right: 20px;
-  background-color: ${props => props.tagColor};
+  background-color: ${props => props.tagBg};
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
@@ -50,50 +50,64 @@ const TagContainer = styled.div`
   width: 60px;
   border-radius: 3px;
   text-align: center;
-  color: white;
+  color: ${props => props.tagColor};
 `;
 
 const TagText = styled.span``;
 
 const IconContainer = styled.div`
-  color: rgba(67, 72, 77, 0.2);
+  color: ${props => props.iconColor};
 `;
 
 const Card01 = ({
   title,
+  titleColor = "#1f2126",
   subtitle,
-  tag = null,
+  subtitleColor = "#61656E",
+  tag,
   tagBg = "#368BE3",
-  iconName = null,
+  tagColor = "white",
+  iconName,
   iconSize = 2,
-  bg
+  bgPhoto,
+  bgColor = "#E33C36",
+  iconColor = "rgba(67, 72, 77, 0.2)"
 }) => (
-  <Container bg={bg}>
-    <TagContainer tagColor={tagBg}>
-      <TagText>{tag}</TagText>
-    </TagContainer>
-    <Content>
-      <ContentColumn>
-        <Title>{title}</Title>
-        <Subtitle>{subtitle}</Subtitle>
-      </ContentColumn>
-      {iconName && (
-        <IconContainer>
-          <i className={`${iconName} fa-${iconSize}x`} />
-        </IconContainer>
-      )}
-    </Content>
+  <Container bgPhoto={bgPhoto} bgColor={bgColor}>
+    {tag && (
+      <TagContainer tagBg={tagBg} tagColor={tagColor}>
+        <TagText>{tag}</TagText>
+      </TagContainer>
+    )}
+    {(title || subtitle) && (
+      <Content>
+        <ContentColumn>
+          {title && <Title color={titleColor}>{title}</Title>}
+          {subtitle && <Subtitle color={subtitleColor}>{subtitle}</Subtitle>}
+        </ContentColumn>
+        {iconName && (
+          <IconContainer iconColor={iconColor}>
+            <i className={`${iconName} fa-${iconSize}x`} />
+          </IconContainer>
+        )}
+      </Content>
+    )}
   </Container>
 );
 
 Card01.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  titleColor: PropTypes.string,
+  subtitle: PropTypes.string,
+  subtitleColor: PropTypes.string,
   tag: PropTypes.string,
   tagBg: PropTypes.string,
+  tagColor: PropTypes.string,
   iconName: PropTypes.string,
   iconSize: PropTypes.number,
-  bg: PropTypes.string.isRequired
+  bgPhoto: PropTypes.string,
+  bgColor: PropTypes.string,
+  iconColor: PropTypes.string
 };
 
 export default Card01;

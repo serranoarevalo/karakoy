@@ -8,6 +8,7 @@ import Card04 from "./Card04";
 import Card05 from "./Card05";
 import Card06 from "./Card06";
 import Card07 from "./Card07";
+import Card08 from "./Card08";
 
 const Container = styled.div`
   padding: 50px;
@@ -32,7 +33,7 @@ export default () => (
       subtitle="Also know as The Imperial City."
       tag="Spain"
       iconName="far fa-heart"
-      bg="https://picsum.photos/740/420/?random"
+      bgPhoto="https://picsum.photos/740/420/?random"
     />
     <Card02
       title="Toledo, Spain"
@@ -77,6 +78,13 @@ export default () => (
       intro="Venice is a city in northeastern Italy and the capital of the Veneto region. It is situated across a group of 118 small islands that are separated by canals and linked by bridges, of which there are 400. The islands are located in the shallow Venetian Lagoon, an enclosed bay that lies between the mouths of the as a UNESCO World Heritage Site."
       cta="View more"
     />
+    <Card08
+      preTitle="November 2017"
+      tag="Italy"
+      cta="View trip"
+      title="Florence, Italy"
+    />
+
     <GlobalStyle />
   </Container>
 );

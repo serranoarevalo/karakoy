@@ -103,9 +103,11 @@ const Card07 = ({
   ctaBg = "linear-gradient(to left, #006EFE, #494AFF)"
 }) => (
   <Container>
-    <TagContainer bgColor={tagBg}>
-      <TagText>{tag}</TagText>
-    </TagContainer>
+    {tag && (
+      <TagContainer bgColor={tagBg}>
+        <TagText>{tag}</TagText>
+      </TagContainer>
+    )}
     <Header bg={bg} />
     <Content>
       <Title>{title}</Title>
@@ -122,7 +124,7 @@ const Card07 = ({
 
 Card07.propTypes = {
   bg: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
+  tag: PropTypes.string,
   title: PropTypes.string.isRequired,
   intro: PropTypes.string.isRequired,
   cta: PropTypes.string.isRequired,

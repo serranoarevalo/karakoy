@@ -79,9 +79,11 @@ const Card05 = ({
 }) => (
   <Container bg={bg}>
     <Content>
-      <Tag bgColor={tagBg}>
-        <TagName>{tag}</TagName>
-      </Tag>
+      {tag && (
+        <Tag bgColor={tagBg}>
+          <TagName>{tag}</TagName>
+        </Tag>
+      )}
       <Title>{title}</Title>
       <Subtitle>{subtitle}</Subtitle>
     </Content>
@@ -93,7 +95,7 @@ const Card05 = ({
 
 Card05.propTypes = {
   bg: PropTypes.string,
-  tag: PropTypes.string.isRequired,
+  tag: PropTypes.string,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   cta: PropTypes.string.isRequired,
