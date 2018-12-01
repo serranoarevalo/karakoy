@@ -6,7 +6,7 @@ const Container = styled.div`
   border-radius: 10px;
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.08);
   background: linear-gradient(rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.7) 100%),
-    url(${props => props.bg});
+    url(${props => props.bgPhoto});
   background-position: center center;
   background-size: cover;
   padding: 0px 25px;
@@ -31,7 +31,7 @@ const Tag = styled.div`
   width: 60px;
   border-radius: 3px;
   text-align: center;
-  color: white;
+  color: ${props => props.color};
   margin-bottom: 10px;
 `;
 
@@ -39,7 +39,7 @@ const TagName = styled.span``;
 
 const Title = styled.span`
   font-weight: 900;
-  color: white;
+  color: ${props => props.color};
   font-size: 23px;
   text-align: center;
   line-height: 1.25;
@@ -49,7 +49,7 @@ const Title = styled.span`
 const Subtitle = styled.span`
   text-align: center;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.8);
+  color: ${props => props.color};
 `;
 
 const CTA = styled.div`
@@ -61,45 +61,59 @@ const CTA = styled.div`
   padding: 10px 0px;
   text-align: center;
   cursor: pointer;
+  color: ${props => props.color};
 `;
 
 const CTAText = styled.span`
-  color: white;
   font-weight: 500;
 `;
 
 const Card05 = ({
-  bg,
+  bgPhoto,
   tag,
-  title,
-  subtitle,
-  cta,
+  tagColor = "white",
   tagBg = "#E33C36",
+  title,
+  titleColor = "white",
+  subtitle,
+  subtitleColor = "rgba(255, 255, 255, 0.8)",
+  cta,
+  ctaColor = "white",
   ctaBg = "#006EFE"
 }) => (
-  <Container bg={bg}>
+  <Container bgPhoto={bgPhoto}>
     <Content>
       {tag && (
-        <Tag bgColor={tagBg}>
+        <Tag bgColor={tagBg} color={tagColor}>
           <TagName>{tag}</TagName>
         </Tag>
       )}
-      <Title>{title}</Title>
-      <Subtitle>{subtitle}</Subtitle>
+      {(title || subtitle) && (
+        <>
+          {title && <Title color={titleColor}>{title}</Title>}
+          {subtitle && <Subtitle color={subtitleColor}>{subtitle}</Subtitle>}
+        </>
+      )}
     </Content>
-    <CTA bgColor={ctaBg}>
-      <CTAText>{cta}</CTAText>
-    </CTA>
+    {cta && (
+      <CTA bgColor={ctaBg} color={ctaColor}>
+        <CTAText>{cta}</CTAText>
+      </CTA>
+    )}
   </Container>
 );
 
 Card05.propTypes = {
-  bg: PropTypes.string,
+  bgPhoto: PropTypes.string,
   tag: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  cta: PropTypes.string.isRequired,
+  tagColor: PropTypes.string,
   tagBg: PropTypes.string,
+  title: PropTypes.string,
+  titleColor: PropTypes.string,
+  subtitle: PropTypes.string,
+  subtitleColor: PropTypes.string,
+  cta: PropTypes.string,
+  ctaColor: PropTypes.string,
   ctaBg: PropTypes.string
 };
 

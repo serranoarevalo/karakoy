@@ -59,7 +59,7 @@ export default () => (
       iconName="fas fa-file-upload"
     />
     <Card05
-      bg="https://picsum.photos/740/420/?random"
+      bgPhoto="https://picsum.photos/740/420/?random"
       tag="Italy"
       title="Burano Island"
       subtitle="November 2017"
