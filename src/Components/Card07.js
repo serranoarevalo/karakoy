@@ -70,7 +70,7 @@ const CTAContainer = styled.div`
 
 const CTA = styled.span`
   cursor: pointer;
-  padding: 13px 30px;
+  padding: 10px 30px;
   border-radius: 25px;
   z-index: 9;
   background: ${props => props.bgColor};
@@ -83,9 +83,9 @@ const CTAText = styled.span`
 
 const Gradient = styled.div`
   position: relative;
-  bottom: 111%;
+  bottom: 115%;
   width: 100%;
-  height: 90%;
+  height: 100%;
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0),

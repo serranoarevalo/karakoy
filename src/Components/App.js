@@ -23,6 +23,9 @@ const Container = styled.div`
     &:nth-child(6) {
       grid-column: span 1;
     }
+    &:nth-child(8) {
+      grid-column: span 4;
+    }
   }
 `;
 
@@ -79,9 +82,10 @@ export default () => (
       cta="View more"
     />
     <Card08
+      bgPhoto="https://picsum.photos/740/420/?random"
       preTitle="November 2017"
       tag="Italy"
-      cta="View trip"
+      cta="View more"
       title="Florence, Italy"
     />
 
