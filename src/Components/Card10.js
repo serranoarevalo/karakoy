@@ -13,7 +13,7 @@ const Container = styled.div`
   flex-direction: column;
   background-position: center center;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 20px;
 `;
 
@@ -42,9 +42,6 @@ const Subtitle = styled.span`
 `;
 
 const TagContainer = styled.div`
-  position: absolute;
-  top: 30px;
-  right: 20px;
   background-color: ${props => props.tagBg};
   color: ${props => props.tagColor};
   font-size: 12px;
@@ -64,7 +61,14 @@ const IconContainer = styled.div`
   color: ${props => props.color};
 `;
 
-const Card02 = ({
+const Top = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
+const Card10 = ({
   title,
   subtitle,
   titleColor = "white",
@@ -72,24 +76,23 @@ const Card02 = ({
   tag,
   tagBg = "#E33C36",
   tagColor = "white",
-  bottomIconName,
-  bottomIconSize = 1,
-  bottomIconColor = "white",
-  centerIconName,
-  centerIconSize = 3,
-  centerIconColor = "white",
+  iconName,
+  iconSize = 1,
+  iconColor = "white",
   bgPhoto
 }) => (
   <Container bgPhoto={bgPhoto}>
     {tag && (
-      <TagContainer tagBg={tagBg} tagColor={tagColor}>
-        <TagText>{tag}</TagText>
-      </TagContainer>
-    )}
-    {centerIconName && (
-      <IconContainer color={centerIconColor}>
-        <i className={`${centerIconName} fa-${centerIconSize}x`} />
-      </IconContainer>
+      <Top>
+        <TagContainer tagBg={tagBg} tagColor={tagColor}>
+          <TagText>{tag}</TagText>
+        </TagContainer>
+        {iconName && (
+          <IconContainer color={iconColor}>
+            <i className={`${iconName} fa-${iconSize}x`} />
+          </IconContainer>
+        )}
+      </Top>
     )}
     {(title || subtitle) && (
       <Content>
@@ -97,28 +100,20 @@ const Card02 = ({
           {title && <Title color={titleColor}>{title}</Title>}
           {subtitle && <Subtitle color={subtitleColor}>{subtitle}</Subtitle>}
         </ContentColumn>
-        {bottomIconName && (
-          <IconContainer color={bottomIconColor}>
-            <i className={`${bottomIconName} fa-${bottomIconSize}x`} />
-          </IconContainer>
-        )}
       </Content>
     )}
   </Container>
 );
 
-Card02.propTypes = {
+Card10.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   tag: PropTypes.string,
   tagBg: PropTypes.string,
-  bottomIconName: PropTypes.string,
-  bottomIconSize: PropTypes.number,
-  centerIconName: PropTypes.string,
-  centerIconSize: PropTypes.number,
-  bottomIconColor: PropTypes.string,
-  centerIconColor: PropTypes.string,
+  iconName: PropTypes.string,
+  iconSize: PropTypes.number,
+  iconColor: PropTypes.string,
   bgPhoto: PropTypes.string
 };
 
-export default Card02;
+export default Card10;

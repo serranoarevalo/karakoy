@@ -51,4 +51,14 @@ const Card09 = ({
   </Container>
 );
 
+Card09.propTypes = {
+  fromColor: PropTypes.string,
+  toColor: PropTypes.string,
+  iconName: PropTypes.string,
+  iconSize: PropTypes.number,
+  iconColor: PropTypes.string,
+  titleColor: PropTypes.string,
+  title: PropTypes.string
+};
+
 export default Card09;

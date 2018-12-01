@@ -10,11 +10,13 @@ import Card06 from "./Card06";
 import Card07 from "./Card07";
 import Card08 from "./Card08";
 import Card09 from "./Card09";
+import Card10 from "./Card10";
+import Card11 from "./Card11";
 
 const Container = styled.div`
   padding: 50px;
   display: grid;
-  grid-template-columns: repeat(10, 150px);
+  grid-template-columns: repeat(auto-fill, 150px);
   grid-gap: 30px;
   grid-auto-rows: 260px;
   grid-template-rows: 260px 400px;
@@ -34,7 +36,14 @@ const MultiCard = styled.div`
   display: grid;
   grid-gap: 30px;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 115px 245px;
+  grid-template-rows: 115px 255px;
+  & > div:last-child {
+    grid-column: span 2;
+  }
+`;
+
+const TwoCards = styled(MultiCard)`
+  grid-template-columns: 1fr;
 `;
 
 export default () => (
@@ -104,7 +113,17 @@ export default () => (
         fromColor="#870EFF"
         toColor="#4C09BE"
       />
+      <Card10
+        title="Toledo, Spain"
+        subtitle="Also know as The Imperial City."
+        tag="Spain"
+        iconName="fas fa-ellipsis-v"
+        bgPhoto="https://picsum.photos/740/420/?random"
+      />
     </MultiCard>
+    <TwoCards>
+      <Card11 title="Euro Trip" preTitle="November 2017" />
+    </TwoCards>
     <GlobalStyle />
   </Container>
 );
