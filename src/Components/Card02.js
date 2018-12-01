@@ -33,17 +33,20 @@ const Title = styled.span`
   font-weight: 900;
   display: block;
   margin-bottom: 8px;
+  color: ${props => props.color};
 `;
 
 const Subtitle = styled.span`
   font-size: 14px;
+  color: ${props => props.color};
 `;
 
 const TagContainer = styled.div`
   position: absolute;
   top: 30px;
   right: 20px;
-  background-color: ${props => props.tagColor};
+  background-color: ${props => props.tagBg};
+  color: ${props => props.tagColor};
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
@@ -57,46 +60,50 @@ const TagContainer = styled.div`
 const TagText = styled.div``;
 
 const IconContainer = styled.div`
-  color: white;
-`;
-
-const CenterIcon = styled.div`
-  color: white;
+  cursor: pointer;
+  color: ${props => props.color};
 `;
 
 const Card02 = ({
   title,
   subtitle,
-  tag = null,
+  titleColor = "white",
+  subtitleColor = "white",
+  tag,
   tagBg = "#E33C36",
-  bottomIconName = null,
+  tagColor = "white",
+  bottomIconName,
   bottomIconSize = 1,
-  centerIconName = null,
+  bottomIconColor = "white",
+  centerIconName,
   centerIconSize = 3,
+  centerIconColor = "white",
   bg
 }) => (
   <Container bg={bg}>
     {tag && (
-      <TagContainer tagColor={tagBg}>
+      <TagContainer tagBg={tagBg} tagColor={tagColor}>
         <TagText>{tag}</TagText>
       </TagContainer>
     )}
     {centerIconName && (
-      <CenterIcon>
+      <IconContainer color={centerIconColor}>
         <i className={`${centerIconName} fa-${centerIconSize}x`} />
-      </CenterIcon>
+      </IconContainer>
     )}
-    <Content>
-      <ContentColumn>
-        <Title>{title}</Title>
-        <Subtitle>{subtitle}</Subtitle>
-      </ContentColumn>
-      {bottomIconName && (
-        <IconContainer>
-          <i className={`${bottomIconName} fa-${bottomIconSize}x`} />
-        </IconContainer>
-      )}
-    </Content>
+    {(title || subtitle) && (
+      <Content>
+        <ContentColumn>
+          {title && <Title color={titleColor}>{title}</Title>}
+          {subtitle && <Subtitle color={subtitleColor}>{subtitle}</Subtitle>}
+        </ContentColumn>
+        {bottomIconName && (
+          <IconContainer color={bottomIconColor}>
+            <i className={`${bottomIconName} fa-${bottomIconSize}x`} />
+          </IconContainer>
+        )}
+      </Content>
+    )}
   </Container>
 );
 
