@@ -41,7 +41,7 @@ export default () => (
       tag="Spain"
       centerIconName="fas fa-play-circle"
       bottomIconName="fas fa-ellipsis-h"
-      bg="https://picsum.photos/740/420/?random"
+      bgPhoto="https://picsum.photos/740/420/?random"
     />
     <Card03
       title="Toledo, Spain"
@@ -49,7 +49,7 @@ export default () => (
       tag="Spain"
       centerIconName="fas fa-play-circle"
       bottomIconName="fas fa-ellipsis-h"
-      bg="https://picsum.photos/740/420/?random"
+      bgPhoto="https://picsum.photos/740/420/?random"
       totalReviews={30}
       ratingAverage={4.5}
     />

@@ -9,7 +9,7 @@ const Container = styled.div`
       rgba(0, 0, 0, 0.2) 40%,
       rgba(0, 0, 0, 0.8) 80%
     ),
-    url(${props => props.bg});
+    url(${props => props.bgPhoto});
   background-position: center center;
   background-size: cover;
   border-radius: 8px;
@@ -25,7 +25,6 @@ const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  color: white;
 `;
 
 const ContentColumn = styled.div``;
@@ -35,17 +34,19 @@ const Title = styled.span`
   font-weight: 900;
   display: block;
   margin-bottom: 8px;
+  color: ${props => props.color};
 `;
 
 const Subtitle = styled.span`
   font-size: 14px;
+  color: ${props => props.color};
 `;
 
 const TagContainer = styled.div`
   position: absolute;
   top: 30px;
   right: 20px;
-  background-color: ${props => props.tagColor};
+  background-color: ${props => props.tagBg};
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
@@ -53,7 +54,7 @@ const TagContainer = styled.div`
   width: 60px;
   border-radius: 3px;
   text-align: center;
-  color: white;
+  color: ${props => props.color};
 `;
 
 const TagText = styled.span``;
@@ -89,25 +90,32 @@ const HalfStar = () => (
 
 const Card03 = ({
   title,
+  titleColor = "white",
+  subtitleColor = "white",
   subtitle,
-  tag = null,
+  tag,
   tagBg = "#E33C36",
-  bottomIconName = null,
+  tagColor = "white",
+  bottomIconName,
   bottomIconSize = 1,
-  bg,
+  bgPhoto,
   totalReviews,
   ratingAverage
 }) => (
-  <Container bg={bg}>
+  <Container bgPhoto={bgPhoto}>
     {tag && (
-      <TagContainer tagColor={tagBg}>
+      <TagContainer tagBg={tagBg} color={tagColor}>
         <TagText>{tag}</TagText>
       </TagContainer>
     )}
     <Content>
       <ContentColumn>
-        <Title>{title}</Title>
-        <Subtitle>{subtitle}</Subtitle>
+        {(title || subtitle) && (
+          <>
+            <Title color={titleColor}>{title}</Title>
+            <Subtitle color={subtitleColor}>{subtitle}</Subtitle>
+          </>
+        )}
         <ReviewsContainer>
           {ratingAverage === 0.5 && <HalfStar />}
           {ratingAverage === 1 && <FullStar />}
@@ -171,9 +179,11 @@ const Card03 = ({
               <FullStar />
             </>
           )}
-          <span>
-            {`${totalReviews === 1 ? "1 review" : `${totalReviews} reviews`}`}
-          </span>
+          {totalReviews && (
+            <span>
+              {`${totalReviews === 1 ? "1 review" : `${totalReviews} reviews`}`}
+            </span>
+          )}
         </ReviewsContainer>
       </ContentColumn>
       {bottomIconName && (
@@ -186,14 +196,14 @@ const Card03 = ({
 );
 
 Card03.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
   tag: PropTypes.string,
   tagBg: PropTypes.string,
   bottomIconName: PropTypes.string,
   bottomIconSize: PropTypes.number,
-  bg: PropTypes.string.isRequired,
-  totalReviews: PropTypes.number.isRequired,
+  bgPhoto: PropTypes.string,
+  totalReviews: PropTypes.number,
   ratingAverage: PropTypes.oneOf([0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5])
 };
 

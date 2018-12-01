@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Container = styled.div`
   position: relative;
   background-image: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.7)),
-    url(${props => props.bg});
+    url(${props => props.bgPhoto});
   background-size: cover;
   border-radius: 8px;
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.08);
@@ -78,9 +78,9 @@ const Card02 = ({
   centerIconName,
   centerIconSize = 3,
   centerIconColor = "white",
-  bg
+  bgPhoto
 }) => (
-  <Container bg={bg}>
+  <Container bgPhoto={bgPhoto}>
     {tag && (
       <TagContainer tagBg={tagBg} tagColor={tagColor}>
         <TagText>{tag}</TagText>
@@ -108,15 +108,15 @@ const Card02 = ({
 );
 
 Card02.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
   tag: PropTypes.string,
   tagBg: PropTypes.string,
   bottomIconName: PropTypes.string,
   bottomIconSize: PropTypes.number,
   centerIconName: PropTypes.string,
   centerIconSize: PropTypes.number,
-  bg: PropTypes.string.isRequired
+  bgPhoto: PropTypes.string
 };
 
 export default Card02;
