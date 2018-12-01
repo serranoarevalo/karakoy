@@ -197,9 +197,12 @@ const Card03 = ({
 
 Card03.propTypes = {
   title: PropTypes.string,
+  titleColor: PropTypes.string,
+  subtitleColor: PropTypes.string,
   subtitle: PropTypes.string,
   tag: PropTypes.string,
   tagBg: PropTypes.string,
+  tagColor: PropTypes.string,
   bottomIconName: PropTypes.string,
   bottomIconSize: PropTypes.number,
   bgPhoto: PropTypes.string,

@@ -56,7 +56,7 @@ export default () => (
     <Card04
       title="Upload a new trip"
       subtitle="Drag a file to attach or browse"
-      centerIconName="fas fa-file-upload"
+      iconName="fas fa-file-upload"
     />
     <Card05
       bg="https://picsum.photos/740/420/?random"

@@ -35,39 +35,55 @@ const Title = styled.span`
   font-size: 18px;
   display: block;
   margin-bottom: 8px;
+  color: ${props => props.color};
 `;
 
 const Subtitle = styled.span`
   font-size: 14px;
-  color: #a2abb3;
+  color: ${props => props.color};
 `;
 
 const IconContainer = styled.div`
-  color: #43484d;
+  color: ${props => props.color};
   margin-bottom: 20px;
 `;
 
-const Card04 = ({ title, subtitle, centerIconName, centerIconSize = 3 }) => (
+const Card04 = ({
+  title,
+  titleColor = "#43484D",
+  subtitle,
+  subtitleColor = "#a2abb3",
+  iconName,
+  iconSize = 3,
+  iconColor = "#43484d"
+}) => (
   <Container>
     <Content>
       <ContentColumn>
-        {centerIconName && (
-          <IconContainer>
-            <i className={`${centerIconName} fa-${centerIconSize}x`} />
+        {iconName && (
+          <IconContainer color={iconColor}>
+            <i className={`${iconName} fa-${iconSize}x`} />
           </IconContainer>
         )}
-        <Title>{title}</Title>
-        <Subtitle>{subtitle}</Subtitle>
+        {(title || subtitle) && (
+          <>
+            {title && <Title color={titleColor}>{title}</Title>}
+            {subtitle && <Subtitle color={subtitleColor}>{subtitle}</Subtitle>}
+          </>
+        )}
       </ContentColumn>
     </Content>
   </Container>
 );
 
 Card04.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  centerIconName: PropTypes.string,
-  centerIconSize: PropTypes.number
+  title: PropTypes.string,
+  titleColor: PropTypes.string,
+  subtitle: PropTypes.string,
+  subtitleColor: PropTypes.string,
+  iconName: PropTypes.string,
+  iconSize: PropTypes.number,
+  iconColor: PropTypes.string
 };
 
 export default Card04;
