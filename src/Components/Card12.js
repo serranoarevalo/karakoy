@@ -73,6 +73,7 @@ const CTA = styled.span`
   display: block;
   margin-top: 20px;
   font-size: 16px;
+  cursor: pointer;
   font-weight: 500;
   i {
     margin-left: 10px;

@@ -13,6 +13,7 @@ import Card09 from "./Card09";
 import Card10 from "./Card10";
 import Card11 from "./Card11";
 import Card12 from "./Card12";
+import Card13 from "./Card13";
 
 const Container = styled.div`
   padding: 50px;
@@ -20,7 +21,7 @@ const Container = styled.div`
   grid-template-columns: repeat(auto-fill, 150px);
   grid-gap: 30px;
   grid-auto-rows: 260px;
-  grid-template-rows: 260px 400px;
+  grid-template-rows: 260px 400px 400px;
   & > div {
     grid-column: span 2;
     &:nth-child(5),
@@ -134,6 +135,14 @@ export default () => (
         cta="View Trip"
       />
     </TwoCards>
+    <Card13
+      title="Monuments in Florence"
+      intro="A quick journey into Florence's most important monuments."
+      cta="View trip detail"
+      centerIcon="fas fa-play-circle"
+      topIcons={["far fa-heart", "fas fa-share"]}
+      bgPhoto="https://picsum.photos/740/420/?random"
+    />
     <GlobalStyle />
   </Container>
 );
