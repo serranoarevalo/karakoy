@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "ee43e926fa32d20f7851",
-    "url": "/karakoy/static/js/main.ee43e926.chunk.js"
+    "revision": "d6a1951bf86d2bb00bed",
+    "url": "/karakoy/static/js/main.d6a1951b.chunk.js"
   },
   {
     "revision": "1e968c0f846bc06e99b9",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/karakoy/static/js/runtime~main.7cf80b3d.js"
   },
   {
-    "revision": "7f2c601b18ae11d9eaa0ee7429374f6c",
+    "revision": "9ccd55172a80e4af33d40233bcef2d84",
     "url": "/karakoy/index.html"
   }
 ];
