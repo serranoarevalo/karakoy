@@ -15,6 +15,7 @@ import Card11 from "./Card11";
 import Card12 from "./Card12";
 import Card13 from "./Card13";
 import Card14 from "./Card14";
+import Card15 from "./Card15";
 
 const Container = styled.div`
   padding: 50px;
@@ -151,6 +152,14 @@ export default () => (
       iconName="fas fa-heart"
       bgPhoto="https://picsum.photos/740/420/?random"
       cta="View Trip"
+    />
+    <Card15
+      title="The Blue House"
+      subtitle="Burano, Venice, Italy"
+      iconName="fas fa-heart"
+      btnIcon="fas fa-arrow-right"
+      bgPhoto="https://picsum.photos/740/420/?random"
+      secondTitle="$250 per night"
     />
     <GlobalStyle />
   </Container>
