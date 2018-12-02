@@ -24,7 +24,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 150px);
   grid-gap: 30px;
-  grid-auto-rows: 260px;
+  grid-auto-rows: 400px;
   grid-template-rows: 260px 400px 400px;
   & > div {
     grid-column: span 2;
@@ -37,6 +37,14 @@ const Container = styled.div`
     }
     &:nth-child(14) {
       grid-column: span 4;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+    padding: 10px;
+    & > div {
+      grid-column: span 1 !important;
     }
   }
 `;
