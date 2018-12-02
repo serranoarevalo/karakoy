@@ -16,9 +16,11 @@ import Card12 from "./Card12";
 import Card13 from "./Card13";
 import Card14 from "./Card14";
 import Card15 from "./Card15";
+import Card16 from "./Card16";
 
 const Container = styled.div`
   padding: 50px;
+  padding-bottom: 100px;
   display: grid;
   grid-template-columns: repeat(auto-fill, 150px);
   grid-gap: 30px;
@@ -31,6 +33,9 @@ const Container = styled.div`
       grid-column: span 1;
     }
     &:nth-child(8) {
+      grid-column: span 4;
+    }
+    &:nth-child(14) {
       grid-column: span 4;
     }
   }
@@ -162,6 +167,12 @@ export default () => (
       secondTitle="$250 per night"
       totalReviews={30}
       ratingAverage={4.5}
+    />
+    <Card16
+      title="The Blue House"
+      text="Venice is a city in northeastern Italy and the capital of the Veneto region. It is situated across a group of 118 small islands that are separated by canals and linked by bridges, of which there are 400. The islands are located in the shallow Venetian Lagoon, an enclosed bay that lies between the mouths of the Po and the Piave rivers."
+      bgPhoto="https://picsum.photos/740/420/?random"
+      preTitle="November 2017"
     />
     <GlobalStyle />
   </Container>

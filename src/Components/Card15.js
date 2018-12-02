@@ -134,79 +134,75 @@ const Card15 = ({
 
     {(title || subtitle) && (
       <Content>
-        {totalReviews && ratingAverage && (
-          <ReviewsContainer>
-            {ratingAverage === 0.5 && <HalfStar />}
-            {ratingAverage === 1 && <FullStar />}
-            {ratingAverage === 1.5 && (
-              <>
-                <FullStar />
-                <HalfStar />
-              </>
-            )}
-            {ratingAverage === 2 && (
-              <>
-                <FullStar />
-                <FullStar />
-              </>
-            )}
-            {ratingAverage === 2.5 && (
-              <>
-                <FullStar />
-                <FullStar />
-                <HalfStar />
-              </>
-            )}
-            {ratingAverage === 3 && (
-              <>
-                <FullStar />
-                <FullStar />
-                <FullStar />
-              </>
-            )}
-            {ratingAverage === 3.5 && (
-              <>
-                <FullStar />
-                <FullStar />
-                <FullStar />
-                <HalfStar />
-              </>
-            )}
-            {ratingAverage === 4 && (
-              <>
-                <FullStar />
-                <FullStar />
-                <FullStar />
-                <FullStar />
-              </>
-            )}
-            {ratingAverage === 4.5 && (
-              <>
-                <FullStar />
-                <FullStar />
-                <FullStar />
-                <FullStar />
-                <HalfStar />
-              </>
-            )}
-            {ratingAverage === 5 && (
-              <>
-                <FullStar />
-                <FullStar />
-                <FullStar />
-                <FullStar />
-                <FullStar />
-              </>
-            )}
-            {totalReviews && (
-              <span>
-                {`${
-                  totalReviews === 1 ? "1 review" : `${totalReviews} reviews`
-                }`}
-              </span>
-            )}
-          </ReviewsContainer>
-        )}
+        <ReviewsContainer>
+          {ratingAverage === 0.5 && <HalfStar />}
+          {ratingAverage === 1 && <FullStar />}
+          {ratingAverage === 1.5 && (
+            <>
+              <FullStar />
+              <HalfStar />
+            </>
+          )}
+          {ratingAverage === 2 && (
+            <>
+              <FullStar />
+              <FullStar />
+            </>
+          )}
+          {ratingAverage === 2.5 && (
+            <>
+              <FullStar />
+              <FullStar />
+              <HalfStar />
+            </>
+          )}
+          {ratingAverage === 3 && (
+            <>
+              <FullStar />
+              <FullStar />
+              <FullStar />
+            </>
+          )}
+          {ratingAverage === 3.5 && (
+            <>
+              <FullStar />
+              <FullStar />
+              <FullStar />
+              <HalfStar />
+            </>
+          )}
+          {ratingAverage === 4 && (
+            <>
+              <FullStar />
+              <FullStar />
+              <FullStar />
+              <FullStar />
+            </>
+          )}
+          {ratingAverage === 4.5 && (
+            <>
+              <FullStar />
+              <FullStar />
+              <FullStar />
+              <FullStar />
+              <HalfStar />
+            </>
+          )}
+          {ratingAverage === 5 && (
+            <>
+              <FullStar />
+              <FullStar />
+              <FullStar />
+              <FullStar />
+              <FullStar />
+            </>
+          )}
+          {totalReviews && (
+            <span>
+              {`${totalReviews === 1 ? "1 review" : `${totalReviews} reviews`}`}
+            </span>
+          )}
+        </ReviewsContainer>
         {title && <Title color={titleColor}>{title}</Title>}
         {subtitle && <Subtitle color={subtitleColor}>{subtitle}</Subtitle>}
         {(secondTitle || btnIcon) && (
