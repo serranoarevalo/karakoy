@@ -14,6 +14,7 @@ import Card10 from "./Card10";
 import Card11 from "./Card11";
 import Card12 from "./Card12";
 import Card13 from "./Card13";
+import Card14 from "./Card14";
 
 const Container = styled.div`
   padding: 50px;
@@ -142,6 +143,14 @@ export default () => (
       centerIcon="fas fa-play-circle"
       topIcons={["far fa-heart", "fas fa-share"]}
       bgPhoto="https://picsum.photos/740/420/?random"
+    />
+    <Card14
+      title="Toledo, Spain"
+      subtitle="Also know as The Imperial City."
+      tag="16"
+      iconName="fas fa-heart"
+      bgPhoto="https://picsum.photos/740/420/?random"
+      cta="View Trip"
     />
     <GlobalStyle />
   </Container>
