@@ -160,6 +160,8 @@ export default () => (
       btnIcon="fas fa-arrow-right"
       bgPhoto="https://picsum.photos/740/420/?random"
       secondTitle="$250 per night"
+      totalReviews={30}
+      ratingAverage={4.5}
     />
     <GlobalStyle />
   </Container>
