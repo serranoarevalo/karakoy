@@ -8,6 +8,17 @@ A set of beautiful React UI Card Components
 2. Install everything with `yarn` or `npm install`
 3. Run with `yarn start`
 
+## Dependencies
+
+```json
+"prop-types": "^15.6.2",
+"react": "^16.6.3",
+"react-dom": "^16.6.3",
+"react-scripts": "2.1.1",
+"reset-css": "^4.0.1",
+"styled-components": "^4.1.2"
+```
+
 ## Info:
 
 The cards work with Font Awesome so you would have to import the FA stylesheet:
